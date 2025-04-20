@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Study Plan PDF</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.6; margin: 20px; }
+        h1 { color: #333; text-align: center; }
+        h2 { color: #555; border-bottom: 1px solid #ccc; margin-top: 20px; }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Study Plan</h1>
+    {% for block in plan.split('\n\n') %}
+        {% if block.startswith("Day") %}
+            <h2>{{ block.split('\n')[0] }}</h2>
+            <ul>
+                {% for line in block.split('\n')[1:] %}
+                    <li>{{ line.strip() }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ block }}</p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
