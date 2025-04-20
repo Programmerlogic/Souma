@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Study Plan Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://uploads-ssl.webflow.com/60babc2f4a97cece9858d8e7/634f6224f7785fef6fb21cd3_hq720.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-4xl w-full bg-white bg-opacity-60 backdrop-blur-lg border border-white border-opacity-30 p-10 rounded-2xl shadow-2xl fade-in">
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="flex justify-center mb-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3658/3658753.png" alt="AI Icon" class="w-16 h-16">
+      </div>
+      <h1 class="text-4xl font-extrabold text-indigo-800">AI Study Planner</h1>
+      <p class="mt-2 text-gray-700">Plan smarter, study better — powered by AI.</p>
+    </div>
+
+    <!-- Form -->
+    <form method="post" action="/" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+        <input type="text" name="subject" placeholder="e.g., Math, Science" required class="p-3 border border-gray-300 w-full rounded-lg focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Study Hours per Day</label>
+        <input type="number" name="time" placeholder="e.g., 4" required class="p-3 border border-gray-300 w-full rounded-lg focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Number of Days</label>
+        <input type="number" name="days" placeholder="e.g., 30" required class="p-3 border border-gray-300 w-full rounded-lg focus:ring-2 focus:ring-indigo-400">
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm font-medium text-gray-700 mb-1">Syllabus / Topics</label>
+        <textarea name="syllabus" placeholder="Enter syllabus or specific topics" required class="p-3 border border-gray-300 w-full rounded-lg h-28 resize-none focus:ring-2 focus:ring-indigo-400"></textarea>
+      </div>
+      <div class="md:col-span-2">
+        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition flex items-center justify-center space-x-2">
+          <span>🎯</span>
+          <span>Generate Study Plan</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
